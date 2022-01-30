@@ -1,11 +1,9 @@
 require("dotenv").config()
 const {MessageEmbed} = require("discord.js")
 const discord = require("discord.js")
-
 const client = new discord.Client({
     intents: 32767
 })
-
 const redis = require('quickredis-db')
 const db = redis.createClient(process.env.redis)
 db.once("ready", () => {
@@ -15,7 +13,6 @@ client.on("ready", () => {
     console.log("Connected to Discord!")
 })
 
-let servid = client.guilds.cache.get('930503731974385694');
 client.on("guildMemberAdd", m => {
     db.set(`${m.id}_joined`, 'true')
     const user = new MessageEmbed()
