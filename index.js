@@ -60,6 +60,7 @@ client.on("guildMemberRemove", async m => {
 var counted50 = await db.get(`${m.id}_50counts`)
 if(counted50 !== null) {
     db.delete(`${m.id}_5ocounts`)
+}
 })
 
 //text based achivements and cmd
