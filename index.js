@@ -106,7 +106,7 @@ client.on("messageCreate", async msg => {
             } else {
             db.add(`${msg.author.id}_achivements`, 1)
             db.set(`${msg.author.id}_50msgs`, 'true')
-            msg.member.roles.add("936929715422371921")
+            msg.member.roles.add("936949500315070504")
             const servMsg3 = new MessageEmbed()
             .setTitle("Achievement obtained!")
             .setDescription(msg.author.tag + "Just obtained the achivement: **Semi active**!\nObtained for sending 50 messages in <#930503731974385697>, rarity: uncommon")
