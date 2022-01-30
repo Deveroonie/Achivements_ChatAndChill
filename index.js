@@ -52,7 +52,14 @@ client.on("guildMemberRemove", async m => {
 
     if(msgc > 25) {
         db.delete(`${m.id}_25msgs`)
+    } 
+    if(msgc > 50) {
+            db.delete(`${m.id}_50msgs`)
     }
+    db.delete(`${m.id}_messages`)
+var counted50 = await db.get(`${m.id}_50counts`)
+if(counted50 !== null) {
+    db.delete(`${m.id}_5ocounts`)
 })
 
 //text based achivements and cmd
@@ -176,9 +183,6 @@ client.on("messageCreate", async msg => {
                 if(c === null) c = "0";
                 var countSent = await db.get(`${msg.author.id}_counts`)
                 if(countSent === null) countSent = '0';
-                var sent50count = await db.get(`${msg.author.id}_50counts`)
-                if(sent50count === null) sent50count = `No (${countSent}/50)`
-
                 var sent50count = await db.get(`${msg.author.id}_50counts`)
                 if(sent50count === null) sent50count = `No (${countSent}/50)`
 
