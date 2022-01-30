@@ -59,7 +59,7 @@ client.on("guildMemberRemove", async m => {
     db.delete(`${m.id}_messages`)
 var counted50 = await db.get(`${m.id}_50counts`)
 if(counted50 !== null) {
-    db.delete(`${m.id}_5ocounts`)
+    db.delete(`${m.id}_50counts`)
 }
 })
 
