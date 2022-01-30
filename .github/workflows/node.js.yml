@@ -26,4 +26,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - run: npm i discord.js
+    - run: npm i quickredis-db
+    - run: npm i dotenv
     - run: node .
